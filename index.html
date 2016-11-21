@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Firebase</title>
+</head>
+<body>
+	<h1>Hello world</h1>
+
+	<p id="text">Change me</p>
+
+	<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+	<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyBFf4Z7f3DtOyrcKjhAJ90C4GRHCeUdKgk",
+		authDomain: "quickstart-dc72e.firebaseapp.com",
+		databaseURL: "https://quickstart-dc72e.firebaseio.com",
+		storageBucket: "quickstart-dc72e.appspot.com",
+		messagingSenderId: "7133175860"
+	};
+	firebase.initializeApp(config);
+
+	var text = document.getElementById('text');
+	var dbRef = firebase.database().ref().child('text');
+	dbRef.on('value', function(snap){
+		text.innerText = snap.val()
+	});	
+</script>
+</body>
+</html>
