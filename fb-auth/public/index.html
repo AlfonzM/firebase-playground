@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Firebase</title>
+	<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+</head>
+<body>
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '183374175445774',
+				xfbml      : true,
+				version    : 'v2.8'
+			});
+			FB.AppEvents.logPageView();
+		};
+
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+	
+	<h1 id="title">FB Login</h1>
+
+	<h1 id="text">Loading</h1>
+	<button id="logout">Logout</button>
+	<button id="login">Login with Facebook</button>
+	<script src="app.js"></script>
+</body>
+</html>

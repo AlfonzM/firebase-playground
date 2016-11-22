@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "quickstart-dc72e",
+    "staging": "quickstart-staging"
+  }
+}
